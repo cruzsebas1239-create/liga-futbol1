@@ -1,0 +1,9 @@
+liga=Liga Colombiana
+victoria=3
+empate=1
+derrota=0
+
+equipo=Millonarios
+equipo=Santa Fe
+equipo=Junior
+equipo=Nacional
