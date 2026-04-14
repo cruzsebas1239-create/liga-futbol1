@@ -1,0 +1,4 @@
+JORNADA=1
+2026-04-01 Millonarios 2-1 Santa Fe
+2026-04-02 Junior 0-0 Nacional
+FIN_JORNADA
