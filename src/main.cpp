@@ -28,7 +28,6 @@ struct Config {
     vector<string> equipos;
 };
 
-
 bool leerConfig(Config &config) {
     ifstream file("data/config.txt");
     if (!file) return false;
@@ -50,7 +49,6 @@ bool leerConfig(Config &config) {
     }
     return true;
 }
-
 
 vector<Partido> leerPartidos() {
     vector<Partido> partidos;
@@ -77,7 +75,6 @@ vector<Partido> leerPartidos() {
     return partidos;
 }
 
-
 void guardarPartido(Partido p) {
     ofstream file("data/partidos.txt", ios::app);
     file << p.fecha << "," << p.local << "," << p.visitante << ","
@@ -102,7 +99,6 @@ void actualizarEquipo(Equipo *eq, int gf, int gc, Config config) {
     }
 }
 
-
 vector<Equipo> construirTabla(vector<Partido> partidos, Config config) {
     vector<Equipo> tabla;
 
@@ -124,13 +120,11 @@ vector<Equipo> construirTabla(vector<Partido> partidos, Config config) {
     return tabla;
 }
 
-
 bool comparar(Equipo a, Equipo b) {
     if (a.PTS != b.PTS) return a.PTS > b.PTS;
     if (a.DG != b.DG) return a.DG > b.DG;
     return a.GF > b.GF;
 }
-
 
 void mostrarTabla(vector<Equipo> tabla) {
     sort(tabla.begin(), tabla.end(), comparar);
@@ -181,7 +175,6 @@ void registrarPartido(Config config) {
     cout << "Partido guardado\n";
 }
 
-
 void verPartidos() {
     ifstream file("data/partidos.txt");
     string linea;
@@ -189,7 +182,6 @@ void verPartidos() {
         cout << linea << endl;
 }
 
-// ----------- MENU -----------
 int menu(string liga) {
     cout << "\n=== " << liga << " ===\n";
     cout << "1. Ver tabla\n";
@@ -200,7 +192,6 @@ int menu(string liga) {
     int op; cin >> op;
     return op;
 }
-
 
 int main() {
     Config config;
@@ -225,6 +216,9 @@ int main() {
             verPartidos();
 
     } while (op != 4);
+
+    return 0;
+}
 
     return 0;
 }
